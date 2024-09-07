@@ -1,0 +1,25 @@
+.card {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  background: linear-gradient(
+    125deg,
+    rgba(55, 65, 100, 1) 0%,
+    rgb(12, 23, 43) 100%
+  );
+  font-weight: 500;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 8px 1px;
+  color: whitesmoke;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.selected {
+  background: linear-gradient(-25deg, #9c7bfe 0%, #7141ff 95%);
+  color: white;
+}

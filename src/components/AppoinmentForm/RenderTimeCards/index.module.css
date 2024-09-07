@@ -1,0 +1,13 @@
+/* HorarioCard.module.css */
+
+.containerCards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1rem 0;
+}
+
+.selected {
+  background-color: #00d9b2;
+  color: white;
+  border-color: #00d9b2;
+}

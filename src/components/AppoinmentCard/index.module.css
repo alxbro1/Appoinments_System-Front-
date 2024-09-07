@@ -1,0 +1,61 @@
+.container {
+  background: linear-gradient(-25deg, #00e0af 0%, #0092cc 95%);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  color: white;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.containerCanceled {
+  background: gray;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  color: white;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.statusActive {
+  opacity: 50%;
+}
+
+.infoContainer {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: end;
+}
+
+.cancelButton {
+  color: rgba(255, 255, 255, 0.9);
+  aspect-ratio: 1;
+  border-radius: 25px;
+  border: 1px white solid;
+  background: linear-gradient(90deg, #9e7eff 0%, #7141ff 80%);
+  font-weight: 800;
+  font-family: "Catamaran", sans-serif;
+  margin-right: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 12px 1px;
+  text-shadow: 0 0 12px 2px;
+  padding: 0.3rem;
+}
+
+.timeInfo {
+  font-size: 1.7rem;
+}
+
+.timeSpan {
+  margin: 0.5rem 0.2rem;
+}
+
+.dateInfo {
+  text-wrap: nowrap;
+  color: rgba(245, 245, 245, 1);
+  font-weight: 500;
+}
+
+.statusCancel {
+  opacity: 50%;
+}
