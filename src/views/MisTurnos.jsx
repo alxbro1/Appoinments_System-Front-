@@ -18,7 +18,7 @@ export const MisTurnos = () => {
   const fetchAppointments = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3002/turns/getbyuser/${userId}`
+        `https://appoinments-system-backend.vercel.app/turns/getbyuser/${userId}`
       );
       dispatch(addAppointments(res.data))
      /*  setAppointments(res.data); */
