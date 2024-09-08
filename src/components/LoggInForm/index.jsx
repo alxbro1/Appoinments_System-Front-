@@ -42,11 +42,13 @@ export const LoggInForm = () => {
 
             try {
               const data = await sendLogInData(values);
-              Swal.update({
-                title: "LogIn succesfuly",
-                icon: "success",
-                allowOutsideClick: true,
-              });
+              console.log(data.isVerified)
+              if (data.id && !data.isVerified) throw Error("User is not verified");
+                Swal.update({
+                  title: "LogIn succesfuly",
+                  icon: "success",
+                  allowOutsideClick: true,
+                });
               setTimeout(() => {
                 dispatch(loginUser(data));
                 dispatch(addAppointments(data.appointments));
