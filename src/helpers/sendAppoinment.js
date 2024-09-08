@@ -8,7 +8,7 @@ export const sendAppoinment = async (data) => {
         );
         
         if (result && result.status == 201) {
-            alert("Appoinment schedule succesfuly");
+          return
         }
     } catch {
         alert("The appoinment isn't succesfuly schedule");
