@@ -1,5 +1,6 @@
 import style from "./index.module.css";
 import { cancellAppoinment } from "../../helpers/cancellAppoinment";
+import Swal from "sweetalert2";
 
 export const AppointmentCard = ({ data, onCancel }) => {
   const { date, time, status, id } = data;
@@ -8,14 +9,32 @@ export const AppointmentCard = ({ data, onCancel }) => {
 
 
   const handleCancel = (event) => {
-    cancellAppoinment(event)
-      .then((res) => {
-        console.log(res);
-        onCancel();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    Swal.fire({
+      title: "Delete the appoinment",
+      text: "Are you sure you want to delete the shift?",
+      icon: "question",
+      showConfirmButton: true,
+      showCancelButton:true,
+    }).then(() => {
+      cancellAppoinment(event)
+        .then((res) => {
+          console.log(res);
+          onCancel();
+          Swal.fire({
+            text:"delete succesfuly",
+            icon:"success",
+            showConfirmButton:false,
+            showCancelButton:false,
+            showCloseButton:true,
+          })
+          setTimeout(() => {
+            Swal.close()
+          },2000)
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    })
   };
 
   return (
