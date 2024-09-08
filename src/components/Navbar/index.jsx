@@ -35,10 +35,12 @@ export const Navbar = () => {
       )}
       <div style={{ display: "flex" }}>
         <Link to="/home">
+        <div style={{display:"flex"}}>
           <img src="/IconProjectM3.svg" />
           <h1>
             Mind <br /> Wellnes
           </h1>
+        </div>
         </Link>
         {width >= 768 && (
           <ul>
