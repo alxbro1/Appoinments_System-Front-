@@ -17,7 +17,7 @@ export const FirstPHome = () => {
             in-person appointments, we connect you with highly qualified
             healthcare professionals to ensure your well-being.
           </p>
-          <Link>Get An Account</Link>
+          <Link to="/register">Get An Account</Link>
           <div>
             <img
               src="/planteritaDelOrtoRecurso.svg"

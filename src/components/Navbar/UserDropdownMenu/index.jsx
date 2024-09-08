@@ -69,8 +69,8 @@ export const UserDropdownMenu = () => {
             <Link to="/perfile">
               <FaUserTie /> <span>Perfile</span>
             </Link>
-            <a href="https://appoinments-system-front.vercel.app/">
-              <FaReply/> <span>Logout</span>
+            <a href="https://appoinments-system-front.vercel.app/home">
+              <FaReply/><span>Logout</span>
             </a>
           </div>
         )}
