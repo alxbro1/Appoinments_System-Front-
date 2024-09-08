@@ -10,15 +10,13 @@ import {
   FaAngleRight,
   FaRegTimesCircle,
 } from "react-icons/fa";
-import {UserDropdownMenu} from './UserDropdownMenu/index'
+import { UserDropdownMenu } from "./UserDropdownMenu/index";
 
 export const Navbar = () => {
   const { width } = useScreenSize();
   const user = useSelector((state) => state.user.user);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
-
-
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   return (
     <header className={styles.container}>
@@ -27,10 +25,12 @@ export const Navbar = () => {
           onClick={() => {
             return setIsMenuOpen(!isMenuOpen);
           }}>
-          <img
-            src="/hamburguerMenu.svg"
-            alt=""
-          />
+          <Link to="/home">
+            <img
+              src="/hamburguerMenu.svg"
+              alt=""
+            />
+          </Link>
         </button>
       )}
       <div style={{ display: "flex" }}>
