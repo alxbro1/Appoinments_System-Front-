@@ -8,9 +8,10 @@ import RenderTimeCards from "./RenderTimeCards";
 import Calendar from "react-calendar";
 import { useNavigate } from "react-router-dom";
 import "./calendar.css";
+import Swal from "sweetalert2";
 
 export const AppoinmentForm = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [date, setDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState(null);
 
@@ -18,9 +19,9 @@ export const AppoinmentForm = () => {
   today.setHours(0, 0, 0, 0);
   const oneMonthFromNow = new Date(today);
   oneMonthFromNow.setDate(today.getDate() + 30);
-   const disableSundays = ({ date }) => {
-     return date.getDay() === 0;
-   };
+  const disableSundays = ({ date }) => {
+    return date.getDay() === 0;
+  };
 
   const user = useSelector((state) => state.user.user);
   const appoinments = useSelector((state) => state.appoinments.appoinments);
@@ -33,8 +34,8 @@ export const AppoinmentForm = () => {
         <Calendar
           className="customCalendar"
           minDate={today}
-          maxDate={oneMonthFromNow} 
-          tileDisabled={disableSundays} 
+          maxDate={oneMonthFromNow}
+          tileDisabled={disableSundays}
           onChange={setDate}
           value={date}
         />
@@ -59,9 +60,25 @@ export const AppoinmentForm = () => {
         }}
         enableReinitialize={true}
         validate={validationAppoinmentSchedule}
-        onSubmit={async (data)=>{sendAppoinment(data).then(() => {
-          navigate("/perfile/appoinments");
-        })}}>
+        onSubmit={async (data) => {
+          Swal.fire({
+            title: "Appoinment schedule",
+            text: "Pending",
+            icon: "question",
+          });
+          sendAppoinment(data).then(() => {
+            Swal.update({
+              title: "Appoinment schedule succesfuly",
+              text: "your Appoinment is confirm",
+              icon: "success",
+              showCloseButton:true
+            });
+            setTimeout(() => {
+              navigate("/perfile/appoinments");
+              Swal.close()
+            }, 2000)
+          });
+        }}>
         {({ values }) => (
           <Form className={style.form}>
             <Field
