@@ -4,7 +4,7 @@ import { Register } from "./views/Register";
 import { Navbar } from "./components/Navbar";
 import { Home } from "./views/Home";
 import { MisTurnos } from "./views/MisTurnos";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { CreateAppoinment } from "./views/CreateAppoinment";
 import { AboutUs } from "./components/Aboutus";

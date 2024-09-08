@@ -24,7 +24,7 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           {!userId ? (
             <div className="footer-col">
               <h4>Access</h4>
@@ -45,10 +45,10 @@ export const Footer = () => {
                   <Link to="/perfile">My perfile</Link>
                 </li>
                 <li>
-                  <Link to="#">My Appoinments</Link>
+                  <Link to="/perfile/appoinments">My Appoinments</Link>
                 </li>
                 <li>
-                  <Link to="#">Create Appoinment</Link>
+                  <Link to="/perfile/createappoinment">Create Appoinment</Link>
                 </li>
               </ul>
             </div>
