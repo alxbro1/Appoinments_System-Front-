@@ -34,10 +34,12 @@ export const Navbar = () => {
         </button>
       )}
       <div style={{ display: "flex" }}>
-        <img src="/IconProjectM3.svg" />
-        <h1>
-          Mind <br /> Wellnes
-        </h1>
+        <Link to="/home">
+          <img src="/IconProjectM3.svg" />
+          <h1>
+            Mind <br /> Wellnes
+          </h1>
+        </Link>
         {width >= 768 && (
           <ul>
             <li>
